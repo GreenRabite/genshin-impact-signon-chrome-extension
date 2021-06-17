@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Genshin Impact Sign On Bonus Helper",
+  "description": "Claims your rewards for you everyday",
+  "version": "0.1",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "owl.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://webstatic-sea.mihoyo.com/ys/event/signin-sea*"],
+      "js": ["content_scripts.js"]
+    }
+  ]
+}
