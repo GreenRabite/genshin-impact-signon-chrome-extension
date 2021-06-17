@@ -1,5 +1,10 @@
 // Base on 24 hour
 const RESET_TIMER_HOUR = 14; 
+
+// Not working from unpacked
+chrome.runtime.onInstalled.addListener(reason => {
+  alert("Successfully Installed")
+})
   
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab ){
   if(!tab.url || !tab.url.startsWith('http') || changeInfo.status !== "complete"){
