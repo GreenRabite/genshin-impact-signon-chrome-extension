@@ -1,4 +1,3 @@
-const NEXT_DAY = 3600 * 1000 * 24;
 // Base on 24 hour
 const RESET_TIMER_HOUR = 14; 
   
