@@ -1,4 +1,4 @@
-# Jirachu
+# GI Dailies
 __Version 0.1__
 
 GI Dailies is a chrome extension that will automatically grab your daily signin bonus from the webpage while you are surfing the web. Never miss another daily again! 
