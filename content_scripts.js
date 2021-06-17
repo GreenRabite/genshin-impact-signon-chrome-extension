@@ -22,6 +22,7 @@ const sleep = (ms) => {
 }
 
 const checkForSignOnBonus = async () => {
+  await sleep(1000)
   if(!isLoggedin()){
     alert("You are not signed in. Please log in and claim normally")
   }else{
@@ -29,12 +30,16 @@ const checkForSignOnBonus = async () => {
     if(activeComponent){
       activeComponent.click()
       await sleep(1000);
-      document.querySelector('[class*=---dialog-close]').click()
+      const closeButton = document.querySelector('[class*=---dialog-close]')
+      if(closeButton){
+        closeButton.click()
+      }
       alert("Successfully claimed your bonus!")
     }else{
       alert("Already claimed for the day! See you tomorrow")
     }
   }
 }
-
-window.addEventListener('load', setTimeout(() => checkForSignOnBonus(), 1000))
+window.addEventListener('load', () => {
+  checkForSignOnBonus()
+})

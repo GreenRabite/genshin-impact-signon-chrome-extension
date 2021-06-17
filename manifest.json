@@ -7,7 +7,7 @@
     "service_worker": "background.js"
   },
   "icons": {
-    "48": "owl.png"
+    "48": "keqing_icon.png"
   },
   "permissions": [
     "activeTab",
