@@ -1,5 +1,5 @@
 # GI Dailies
-__Version 0.1__
+__Version 0.2-beta__
 
 GI Dailies is a chrome extension that will automatically grab your daily signin bonus from the webpage while you are surfing the web. Never miss another daily again! 
 
@@ -26,3 +26,10 @@ TBD
 2) Pass messages from my background scripts to the content scripts so it knows to only run the script if a certain message was passed to it
 3) Clean up the code
 4) Better looping. Instead of using sleep to wait for state change, we should use a loop
+5) Better testing
+
+## ChangeLog
+Build     | Description
+----------|------------
+0.1-alpha | Initial release. Working prototype.
+0.2-beta  | Added flow handling for Mihoyo verification modal and fix bugs
