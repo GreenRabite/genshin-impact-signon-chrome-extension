@@ -14,8 +14,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab ){
   chrome.storage.sync.get('genshinImpactSignOnTime', (data) => {
     if(data.genshinImpactSignOnTime){
       const oldDate = new Date(data.genshinImpactSignOnTime)
-      if(Date.now() > oldDate){
-        const date = new Date(Date.now())
+      const date = new Date(Date.now())
+      if(date > oldDate){
         const nextDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, RESET_TIMER_HOUR, 0)
         chrome.storage.sync.set({genshinImpactSignOnTime: nextDate.getTime()}, () => {
           chrome.scripting.executeScript({

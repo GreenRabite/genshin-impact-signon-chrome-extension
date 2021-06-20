@@ -26,20 +26,42 @@ const checkForSignOnBonus = async () => {
   if(!isLoggedin()){
     alert("You are not signed in. Please log in and claim normally")
   }else{
-    const activeComponent = document.querySelector('[class*=--active]')
-    if(activeComponent){
-      activeComponent.click()
-      await sleep(1000);
-      const closeButton = document.querySelector('[class*=---dialog-close]')
-      if(closeButton){
-        closeButton.click()
-      }
-      alert("Successfully claimed your bonus!")
+    const verificationLoginContainer = document.querySelector('.mhy-account-flow');
+    if (!verificationLoginContainer){
+      claimLoginBonus()
     }else{
-      alert("Already claimed for the day! See you tomorrow")
+      const inputsButtons = verificationLoginContainer.querySelectorAll(".mhy-account-flow-form-input input");
+      if(isVerificationPrefilled([...inputsButtons])){
+        const loginButton = document.querySelector('.mhy-login-button button');
+        loginButton.click();
+        await sleep(1000);
+        claimLoginBonus();
+      }else{
+        alert("Please log in to Mihoyo verification form. Otherwise use a password manager to prefilled to skip this part next time")
+      }
     }
   }
 }
+
+const isVerificationPrefilled = (elements) => {
+  return elements.filter(input => input.value.length > 0).length === 2
+}
+
+const claimLoginBonus = async () => {
+  const activeComponent = document.querySelector('[class*=--active]')
+  if(activeComponent){
+    activeComponent.click()
+    await sleep(1000);
+    const closeButton = document.querySelector('[class*=---dialog-close]')
+    if(closeButton){
+      closeButton.click()
+    }
+    alert("Successfully claimed your bonus!")
+  }else{
+    alert("Already claimed for the day! See you tomorrow")
+  }
+}
+
 window.addEventListener('load', () => {
   checkForSignOnBonus()
 })
