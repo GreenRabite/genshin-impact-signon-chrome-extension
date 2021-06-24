@@ -22,7 +22,7 @@ const sleep = (ms) => {
 }
 
 const checkForSignOnBonus = async () => {
-  await sleep(1000)
+  await sleep(2000)
   if(!isLoggedin()){
     alert("You are not signed in. Please log in and claim normally")
   }else{
