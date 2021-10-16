@@ -34,3 +34,4 @@ Build     | Description
 0.1-alpha | Initial release. Working prototype.
 0.2-beta  | Added flow handling for Mihoyo verification modal and fix bugs
 0.3-beta  | Added more delay
+1.0-alpha  | Major version release. Triggers on Shanghai Midnight (+8 UTC)

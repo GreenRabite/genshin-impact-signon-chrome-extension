@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Genshin Impact Sign On Bonus Helper",
   "description": "Claims your rewards for you everyday",
-  "version": "0.3",
+  "version": "1.0",
   "background": {
     "service_worker": "background.js"
   },
