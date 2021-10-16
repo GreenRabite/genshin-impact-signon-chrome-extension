@@ -1,7 +1,7 @@
 // Base on 24 hour
 // Daily Check in reset at 12AM UTC+8/ 16hrs behind (Shanghai time)
 const firstDate = new Date();
-const INITIAL_RESET_TIMER_HOUR = `${firstDate.getFullYear()}-${firstDate.getMonth() + 1}-${firstDate.getDate()}T16:00:00.000`;
+const INITIAL_RESET_TIMER_HOUR = `${firstDate.getFullYear()}-${firstDate.getMonth() + 1}-${firstDate.getDate() -1}T16:00:00.000`;
 const NEXT_RESET_TIMER_HOUR = `${firstDate.getFullYear()}-${firstDate.getMonth() + 1}-${firstDate.getDate() + 1}T16:00:00.000`;
 
 const timeZoneTransformer = (stringDate, timeZone = "Asia/Shanghai") => {
@@ -55,7 +55,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab ){
       const date = new Date(Date.now())
       if(date > oldDate){
         // const nextDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, RESET_TIMER_HOUR, 0)
-        const nextdate = timeZoneTransformer(NEXT_RESET_TIMER_HOUR).toUtc;
+        const nextDate = timeZoneTransformer(NEXT_RESET_TIMER_HOUR).toUtc;
         chrome.storage.sync.set({genshinImpactSignOnTime: nextDate.getTime()}, () => {
           chrome.scripting.executeScript({
             target: {tabId: tabId},
