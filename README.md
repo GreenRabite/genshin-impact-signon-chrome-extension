@@ -19,7 +19,7 @@ TBD
 4) Turn on **Developer mode** found in the upper right hand corner of the Chrome tab
 5) Press the **Load Unpacked** button and look for the folder you unzip earlier
 6) Huzzah! You should be up and running. As you are surfing the web, the Daily checkin screen should appear within seconds.
-7) After this, the timer will reset every 2PM (your local time) the next day
+7) After this, the timer will reset every 12AM Shanghai timezone (UTC+8) the next day
 
 ## Future Roadmaps
 1) Find out when the check-ins actually reset and base it off that
