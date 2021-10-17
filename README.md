@@ -1,5 +1,5 @@
 # GI Dailies
-__Version 0.3-beta__
+__Version 1.0a-alpha__
 
 GI Dailies is a chrome extension that will automatically grab your daily signin bonus from the webpage while you are surfing the web. Never miss another daily again! 
 
