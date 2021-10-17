@@ -22,11 +22,10 @@ TBD
 7) After this, the timer will reset every 12AM Shanghai timezone (UTC+8) the next day
 
 ## Future Roadmaps
-1) Find out when the check-ins actually reset and base it off that
-2) Pass messages from my background scripts to the content scripts so it knows to only run the script if a certain message was passed to it
-3) Clean up the code
-4) Better looping. Instead of using sleep to wait for state change, we should use a loop
-5) Better testing
+1) Pass messages from my background scripts to the content scripts so it knows to only run the script if a certain message was passed to it
+1) Clean up the code
+1) Better looping. Instead of using sleep to wait for state change, we should use a loop
+1) Better testing
 
 ## ChangeLog
 Build     | Description
